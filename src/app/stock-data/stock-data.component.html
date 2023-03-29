@@ -1,0 +1,18 @@
+<table class="table-auto w-full">
+  <thead>
+  <tr>
+    <th class="cursor-pointer" (click)="sortBy('companyName')">Company Name</th>
+    <th class="cursor-pointer" (click)="sortBy('ticketSymbol')">Ticket Symbol</th>
+    <th class="cursor-pointer" (click)="sortBy('currentPrice')">Current Price</th>
+    <th class="cursor-pointer" (click)="sortBy('changePercentage')">Change (%)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of stockData$ | async" class="border-b border-gray-200 hover:bg-gray-100">
+    <td class="py-2 px-4">{{ item.companyName }}</td>
+    <td class="py-2 px-4">{{ item.ticketSymbol }}</td>
+    <td class="py-2 px-4">{{ item.currentPrice }}</td>
+    <td class="py-2 px-4">{{ item.changePercentage }}</td>
+  </tr>
+  </tbody>
+</table>
